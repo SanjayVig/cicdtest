@@ -8,4 +8,5 @@ phases:
   pre_build:
     run-as: root
     commands:
+      - pip install install waitress
       - pip install flask
