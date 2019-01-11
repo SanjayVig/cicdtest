@@ -1,0 +1,21 @@
+version: 0.0.1
+
+run-as: root
+
+env:
+  variables:
+    key: "value"
+    key: "value"
+  parameter-store:
+    key: "value"
+    key: "value"
+            
+phases:
+  install:
+    run-as: root
+    commands:
+      - apt-get update -y
+  pre_build:
+    run-as: root
+    commands:
+      - pip install flask
