@@ -17,7 +17,9 @@ artifacts:
       base-directory: $CODEBUILD_SRC_DIR_source1
       files:
         - cicdtest.tar.gz
+      name: cicdtest.tar.gz 
     artifact2:
       base-directory: $CODEBUILD_SRC_DIR_source2
       files:
         - cicdtest2.tar.gz
+      name: cicdtest2.tar.gz
