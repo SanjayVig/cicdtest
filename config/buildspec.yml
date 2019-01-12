@@ -4,22 +4,22 @@ phases:
   install:
     run-as: root
     commands:
-      - apt-get install tar -y
+      - apt-get install zip -y
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR_source1
-      - tar -cvzf cicdtest.tar.gz .
+      - zip cicdtest.zip .
       - cd $CODEBUILD_SRC_DIR_source2
-      - tar -cvzf cicdtest2.tar.gz .
+      - zip cicdtest2.zip .
 artifacts:
   secondary-artifacts:
     artifact1:
       base-directory: $CODEBUILD_SRC_DIR_source1
       files:
-        - cicdtest.tar.gz
-      name: cicdtest.tar.gz 
+        - cicdtest.zip
+      name: cicdtestArtifact
     artifact2:
       base-directory: $CODEBUILD_SRC_DIR_source2
       files:
-        - cicdtest2.tar.gz
-      name: cicdtest2.tar.gz
+        - cicdtest2.zip
+      name: cicdtest2Artifact
