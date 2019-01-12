@@ -15,12 +15,11 @@ phases:
       - cd $CODEBUILD_SRC_DIR_source2
       - zip cicdtest2.zip app/
 artifacts:
+  base-directory: $CODEBUILD_SRC_DIR_source1
+  files:
+    - cicdtest.zip
+  name: cicdtestArtifact
   secondary-artifacts:
-    artifact1:
-      base-directory: $CODEBUILD_SRC_DIR_source1
-      files:
-        - cicdtest.zip
-      name: cicdtestArtifact
     artifact2:
       base-directory: $CODEBUILD_SRC_DIR_source2
       files:
