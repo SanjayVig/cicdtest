@@ -6,14 +6,14 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install zip -y
+  build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR_source1
+      - zip cicdtest.zip app/
+      - cd $CODEBUILD_SRC_DIR_source2
+      - zip cicdtest2.zip app/
 artifacts:
-  base-directory: $CODEBUILD_SRC_DIR_source1
+  base-directory: cicd
   files:
-    - app/
+    - cicdtest.zip
   name: cicdtestArtifact
-  secondary-artifacts:
-    artifact1:
-      base-directory: $CODEBUILD_SRC_DIR_source2
-      files:
-        - app/
-      name: cicdtest2Artifact
