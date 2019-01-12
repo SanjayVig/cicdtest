@@ -1,20 +1,20 @@
 version: 0.1
         
 phases:
-  install:
-    run-as: root
+  build:
     commands:
       - ls
-      - apt-get update -y
-      - apt-get install zip -y
-  pre_build:
-    run-as: root
-    commands:
-      - pip install waitress
-      - pip install flask
-      - zip cicdtest.zip .
-      - cd */cicdtest2 && zip cicdtest2.zip .
+      - cd $CODEBUILD_SRC_DIR_source1
+      - tar -cvzf cicdtest.tar.gz .
+      - cd $CODEBUILD_SRC_DIR_source2
+      - tar -cvzf cicdtest2.tar.gz .
 artifacts:
-  files: 
-    - '*/cicd/cicdtest.zip'
-    - '*/cicdtest2/cicdtest2.zip'
+  secondary-artifacts:
+    artifact1:
+      base-directory: $CODEBUILD_SRC_DIR_source1
+      files:
+        - cicdtest.tar.gz
+    artifact2:
+      base-directory: $CODEBUILD_SRC_DIR_source2
+      files:
+        - cicdtest2.tar.gz
