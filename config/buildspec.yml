@@ -8,7 +8,9 @@ phases:
       - apt-get install zip -y
   build:
     commands:
+      - ls
       - cd $CODEBUILD_SRC_DIR_source1
+      - ls
       - zip cicdtest.zip app/
       - cd $CODEBUILD_SRC_DIR_source2
       - zip cicdtest2.zip app/
