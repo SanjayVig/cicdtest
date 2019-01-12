@@ -9,9 +9,9 @@ phases:
   build:
     commands:
       - cd $CODEBUILD_SRC_DIR_source1
-      - zip cicdtest.zip .
+      - zip cicdtest.zip app/
       - cd $CODEBUILD_SRC_DIR_source2
-      - zip cicdtest2.zip .
+      - zip cicdtest2.zip app/
 artifacts:
   secondary-artifacts:
     artifact1:
