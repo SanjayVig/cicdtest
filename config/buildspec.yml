@@ -13,7 +13,6 @@ phases:
       - cd $CODEBUILD_SRC_DIR_source2
       - zip cicdtest2.zip app/
 artifacts:
-  base-directory: cicd
   files:
     - cicdtest.zip
   name: cicdtestArtifact
