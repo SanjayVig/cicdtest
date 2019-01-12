@@ -6,8 +6,15 @@ phases:
     commands:
       - ls
       - apt-get update -y
+      - apt-get install zip -y
   pre_build:
     run-as: root
     commands:
       - pip install waitress
       - pip install flask
+      - zip cicdtest.zip .
+      - cd */cicdtest2 && zip cicdtest2.zip .
+artifacts:
+  files: 
+    - '*/cicd/cicdtest.zip'
+    - '*/cicdtest2/cicdtest2.zip'
