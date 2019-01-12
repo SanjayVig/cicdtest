@@ -4,6 +4,7 @@ phases:
   install:
     run-as: root
     commands:
+      - ls
       - apt-get update -y
   pre_build:
     run-as: root
