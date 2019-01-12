@@ -4,6 +4,7 @@ phases:
   install:
     run-as: root
     commands:
+      - apt-get update -y
       - apt-get install zip -y
   build:
     commands:
